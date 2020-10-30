@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+</head>
+<body>
+    <h1>OPENWEATHERMAP</h1>
+
+    <script>
+        let url = "http://api.openweathermap.org/data/2.5/weather?q=Seoul&APPID=d4fbaaf488eb7e602bb638451e84731e";
+
+        $.getJSON(url,function(data){
+            let sys = data.sys;
+            let city = data.name;
+            let main = data.main;
+
+            let temp = main.temp;
+
+            $("body").append(parseInt(temp-273.15));
+
+            let icon_url = "http://openweathermap.org/img/w"
+
+        });
+    </script>
+</body>
+</html>
